@@ -336,33 +336,29 @@ public class frmCalificacion extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Agregar");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("ID:");
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setText("Nombre:");
 
-        jTextField1.setText("jTextField1");
+        jLabel9.setText("Taller:");
 
-        jTextField2.setText("jTextField2");
+        jLabel15.setText("Grupo:");
 
-        jLabel9.setText("jLabel9");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
 
-        jLabel15.setText("jLabel15");
+        jLabel16.setText("Calificación:");
 
-        jTextField3.setText("jTextField3");
+        jButton2.setText("Modificar");
 
-        jTextField4.setText("jTextField4");
+        jButton3.setText("Eliminar");
 
-        jLabel16.setText("jLabel16");
-
-        jTextField5.setText("jTextField5");
-
-        jButton2.setText("jButton2");
-
-        jButton3.setText("jButton3");
-
-        jButton4.setText("jButton4");
+        jButton4.setText("Guardar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -386,8 +382,8 @@ public class frmCalificacion extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(100, 100, 100)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(56, 56, 56)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(75, 75, 75)
                                     .addComponent(jButton2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton3)
@@ -521,6 +517,10 @@ public class frmCalificacion extends javax.swing.JFrame {
     private void lblExit2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExit2MouseExited
         jPanelExit2.setBackground(new Color(122,72,221));
     }//GEN-LAST:event_lblExit2MouseExited
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     void setColor(JPanel panel) {
         panel.setBackground(new Color(85, 65, 118));
