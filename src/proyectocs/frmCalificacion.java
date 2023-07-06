@@ -71,6 +71,7 @@ public class frmCalificacion extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         JPanelMenu.setBackground(new java.awt.Color(54, 33, 89));
         JPanelMenu.setName(""); // NOI18N
@@ -448,6 +449,7 @@ public class frmCalificacion extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAsistenciasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsistenciasMouseEntered
