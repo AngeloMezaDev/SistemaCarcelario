@@ -47,13 +47,14 @@ public class frmCalificacion extends javax.swing.JFrame {
         btnSalir = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         lblLogOut = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
         JPanelEncabezado = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanelExit2 = new javax.swing.JPanel();
         lblExit2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableCalificacion = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -82,6 +83,9 @@ public class frmCalificacion extends javax.swing.JFrame {
         btnAsistencias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAsistencias.setPreferredSize(new java.awt.Dimension(146, 47));
         btnAsistencias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAsistenciasMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAsistenciasMouseEntered(evt);
             }
@@ -131,6 +135,9 @@ public class frmCalificacion extends javax.swing.JFrame {
         btnCalificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCalificaciones.setPreferredSize(new java.awt.Dimension(126, 50));
         btnCalificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCalificacionesMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnCalificacionesMouseEntered(evt);
             }
@@ -177,6 +184,9 @@ public class frmCalificacion extends javax.swing.JFrame {
         btnInformes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInformes.setPreferredSize(new java.awt.Dimension(126, 50));
         btnInformes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInformesMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnInformesMouseEntered(evt);
             }
@@ -272,6 +282,21 @@ public class frmCalificacion extends javax.swing.JFrame {
 
         JPanelMenu.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 290, 50));
 
+        jTextField6.setBackground(new java.awt.Color(54, 33, 89));
+        jTextField6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField6.setText("PROFESOR");
+        jTextField6.setBorder(null);
+        jTextField6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTextField6.setFocusable(false);
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        JPanelMenu.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 180, 40));
+
         JPanelEncabezado.setBackground(new java.awt.Color(122, 72, 221));
         JPanelEncabezado.setPreferredSize(new java.awt.Dimension(1060, 84));
         JPanelEncabezado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -279,7 +304,7 @@ public class frmCalificacion extends javax.swing.JFrame {
         jLabel11.setBackground(new java.awt.Color(204, 204, 204));
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel11.setText("PROFESORES");
+        jLabel11.setText("CALIFICACIÓN");
         JPanelEncabezado.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 24, -1, -1));
 
         jLabel10.setBackground(new java.awt.Color(204, 204, 204));
@@ -325,7 +350,7 @@ public class frmCalificacion extends javax.swing.JFrame {
 
         JPanelEncabezado.add(jPanelExit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 0, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableCalificacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -336,7 +361,7 @@ public class frmCalificacion extends javax.swing.JFrame {
                 "ID", "NOMBRE", "TALLER", "GRUPO", "CALIFICACION"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableCalificacion);
 
         jButton1.setText("Agregar");
 
@@ -372,30 +397,28 @@ public class frmCalificacion extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(JPanelEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addGap(189, 189, 189)
-                                            .addComponent(jLabel16)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(100, 100, 100)
-                                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(75, 75, 75)
-                                            .addComponent(jButton2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton3)
-                                            .addGap(59, 59, 59)
-                                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addGap(42, 42, 42)
-                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 993, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(189, 189, 189)
+                                        .addComponent(jLabel16)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(100, 100, 100)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(75, 75, 75)
+                                        .addComponent(jButton2)
+                                        .addGap(35, 35, 35)
+                                        .addComponent(jButton3)
+                                        .addGap(59, 59, 59)
+                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 1060, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane1))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(42, 42, 42)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,8 +426,8 @@ public class frmCalificacion extends javax.swing.JFrame {
                                     .addComponent(jLabel8))
                                 .addGap(45, 45, 45)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(89, 89, 89)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
@@ -425,7 +448,7 @@ public class frmCalificacion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(JPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(JPanelEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -533,6 +556,31 @@ public class frmCalificacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void btnAsistenciasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsistenciasMouseClicked
+        // TODO add your handling code here:
+        frmProfesores Profesor = new frmProfesores();
+        this.dispose();
+        Profesor.setVisible(true);
+    }//GEN-LAST:event_btnAsistenciasMouseClicked
+
+    private void btnCalificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalificacionesMouseClicked
+        // TODO add your handling code here:
+        frmCalificacion Calificacion = new frmCalificacion();
+        this.dispose();
+        Calificacion.setVisible(true);
+    }//GEN-LAST:event_btnCalificacionesMouseClicked
+
+    private void btnInformesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInformesMouseClicked
+        // TODO add your handling code here:
+        frmInformes Informe = new frmInformes();
+        this.dispose();
+        Informe.setVisible(true);
+    }//GEN-LAST:event_btnInformesMouseClicked
+
     void setColor(JPanel panel) {
         panel.setBackground(new Color(85, 65, 118));
     }
@@ -608,12 +656,13 @@ public class frmCalificacion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableCalificacion;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel lblExit2;
     private javax.swing.JLabel lblLogOut;
     // End of variables declaration//GEN-END:variables
