@@ -351,13 +351,13 @@ public class frmCalificacion extends javax.swing.JFrame {
 
         jTableCalificacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NOMBRE", "TALLER", "GRUPO", "CALIFICACION"
+                "ID", "NOMBRE", "APELLIDO", "CEDULA", "TALLER", "GRUPO", "CALIFICACION"
             }
         ));
         jScrollPane1.setViewportView(jTableCalificacion);

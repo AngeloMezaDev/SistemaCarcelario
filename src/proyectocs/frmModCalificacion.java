@@ -5,13 +5,6 @@
 
 package proyectocs;
 
-import CONTROLADOR.ctrlRegistroNuevoProfe;
-import javax.swing.JOptionPane;
-import java.awt.Color;
-import java.util.Date;
-import java.util.List;
-import javax.swing.ListSelectionModel;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,7 +16,6 @@ public class frmModCalificacion extends javax.swing.JFrame {
     public frmModCalificacion() {
         initComponents();
     }
-    private ctrlRegistroNuevoProfe controlador;
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -255,21 +247,6 @@ public class frmModCalificacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarCalificacionNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCalificacionNuevoActionPerformed
-
-        try {
-            // Obtener los valores de los campos de texto
-            String cedulaProf = txtCedulaProf.getText();
-            String codigoProfesor = "#P0001";
-            String cedula = txtCedulaProf.getText();
-            String nombres = txtNombresProf.getText();
-            String apellidos = txtApellidosProf.getText();
-
-
-            // Mostrar mensaje al usuario
-            JOptionPane.showMessageDialog(this, "Los datos se han añadido correctamente.");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al guardar los datos: " + e.getMessage());
-        }
        
     }//GEN-LAST:event_btnRegistrarCalificacionNuevoActionPerformed
 
@@ -284,30 +261,19 @@ public class frmModCalificacion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void lblExit2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExit2MouseClicked
-        this.dispose();
+
     }//GEN-LAST:event_lblExit2MouseClicked
 
     private void lblExit2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExit2MouseEntered
-        jPanelExit2.setBackground(Color.red);
-        lblExit2.setBackground(Color.white);
+        
     }//GEN-LAST:event_lblExit2MouseEntered
 
     private void lblExit2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExit2MouseExited
-        jPanelExit2.setBackground(new Color(122, 72, 221));
+       
     }//GEN-LAST:event_lblExit2MouseExited
 
     private void btnEditarCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCalificacionActionPerformed
-        // Obtener los datos del profesor a editar
-        String idProfesor = lblidProfesor.getText();
-        String nuevosNombres = txtNombresProf.getText();
-        String nuevosApellidos = txtApellidosProf.getText();
-        String nuevaCedula = txtCedulaProf.getText();
-
-        // Verificar que los campos no estén vacíos
-        if (idProfesor.isEmpty() || nuevosNombres.isEmpty() || nuevosApellidos.isEmpty() || nuevaCedula.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
-            return; // Detener la ejecución del método
-        }
+        
     }//GEN-LAST:event_btnEditarCalificacionActionPerformed
 
     /**
